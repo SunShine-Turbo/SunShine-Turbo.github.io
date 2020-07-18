@@ -64,6 +64,292 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-package-lock" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/18/package-lock/" class="article-date">
+  <time datetime="2020-07-18T15:20:18.645Z" itemprop="datePublished">2020-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/18/package-lock/">package-lock</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        {"lockfileVersion":1}
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/18/package-lock/" data-id="ckcruabff0001eskzbbm3hhzq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-package" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/18/package/" class="article-date">
+  <time datetime="2020-07-18T15:20:18.633Z" itemprop="datePublished">2020-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/18/package/">package</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        {"dependencies":{}}
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/18/package/" data-id="ckcruabfk0002eskz40er0xwo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-node_modules/fsevents/README" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/18/node_modules/fsevents/README/" class="article-date">
+  <time datetime="2020-07-18T15:14:17.349Z" itemprop="datePublished">2020-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/18/node_modules/fsevents/README/">node_modules/fsevents/README</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="fsevents"><a href="#fsevents" class="headerlink" title="fsevents "></a>fsevents <a href="https://nodei.co/npm/fsevents/" target="_blank" rel="noopener"><img src="https://nodei.co/npm/fsevents.png" alt="NPM"></a></h1><p>Native access to MacOS FSEvents in <a href="https://nodejs.org/" target="_blank" rel="noopener">Node.js</a></p>
+<p>The FSEvents API in MacOS allows applications to register for notifications of<br>changes to a given directory tree. It is a very fast and lightweight alternative<br>to kqueue.</p>
+<p>This is a low-level library. For a cross-platform file watching module that<br>uses fsevents, check out <a href="https://github.com/paulmillr/chokidar" target="_blank" rel="noopener">Chokidar</a>.</p>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>Supports only <strong>Node.js v8.16 and higher</strong>.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install fsevents</span><br></pre></td></tr></table></figure>
+
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fsevents = <span class="built_in">require</span>(<span class="string">'fsevents'</span>);</span><br><span class="line"><span class="keyword">const</span> stop = fsevents.watch(__dirname, (path, flags, id) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> info = fsevents.getInfo(path, flags, id);</span><br><span class="line">&#125;); <span class="comment">// To start observation</span></span><br><span class="line">stop(); <span class="comment">// To end observation</span></span><br></pre></td></tr></table></figure>
+
+<p>The callback passed as the second parameter to <code>.watch</code> get’s called whenever the operating system detects a<br>a change in the file system. It takes three arguments:</p>
+<h6 id="fsevents-watch-dirname-string-path-string-flags-number-id-string-gt-void-gt-Promise-lt-undefined-gt"><a href="#fsevents-watch-dirname-string-path-string-flags-number-id-string-gt-void-gt-Promise-lt-undefined-gt" class="headerlink" title="fsevents.watch(dirname: string, (path: string, flags: number, id: string) =&gt; void): () =&gt; Promise&lt;undefined&gt;"></a><code>fsevents.watch(dirname: string, (path: string, flags: number, id: string) =&gt; void): () =&gt; Promise&lt;undefined&gt;</code></h6><ul>
+<li><p><code>path: string</code> - the item in the filesystem that have been changed</p>
+</li>
+<li><p><code>flags: number</code> - a numeric value describing what the change was</p>
+</li>
+<li><p><code>id: string</code> - an unique-id identifying this specific event</p>
+<p>Returns closer callback which when called returns a Promise resolving when the watcher process has been shut down.</p>
+</li>
+</ul>
+<h6 id="fsevents-getInfo-path-string-flags-number-id-string-FsEventInfo"><a href="#fsevents-getInfo-path-string-flags-number-id-string-FsEventInfo" class="headerlink" title="fsevents.getInfo(path: string, flags: number, id: string): FsEventInfo"></a><code>fsevents.getInfo(path: string, flags: number, id: string): FsEventInfo</code></h6><p>The <code>getInfo</code> function takes the <code>path</code>, <code>flags</code> and <code>id</code> arguments and converts those parameters into a structure<br>that is easier to digest to determine what the change was.</p>
+<p>The <code>FsEventsInfo</code> has the following shape:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@typedef <span class="type">&#123;'created'|'modified'|'deleted'|'moved'|'root-changed'|'cloned'|'unknown'&#125;</span> <span class="variable">FsEventsEvent</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@typedef <span class="type">&#123;'file'|'directory'|'symlink'&#125;</span> <span class="variable">FsEventsType</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"event"</span>: <span class="string">"created"</span>, <span class="comment">// &#123;FsEventsEvent&#125;</span></span><br><span class="line">  <span class="string">"path"</span>: <span class="string">"file.txt"</span>, </span><br><span class="line">  <span class="string">"type"</span>: <span class="string">"file"</span>,    <span class="comment">// &#123;FsEventsType&#125;</span></span><br><span class="line">  <span class="string">"changes"</span>: &#123;</span><br><span class="line">    <span class="string">"inode"</span>: <span class="literal">true</span>,   <span class="comment">// Had iNode Meta-Information changed</span></span><br><span class="line">    <span class="string">"finder"</span>: <span class="literal">false</span>, <span class="comment">// Had Finder Meta-Data changed</span></span><br><span class="line">    <span class="string">"access"</span>: <span class="literal">false</span>, <span class="comment">// Had access permissions changed</span></span><br><span class="line">    <span class="string">"xattrs"</span>: <span class="literal">false</span>  <span class="comment">// Had xAttributes changed</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"flags"</span>: <span class="number">0x100000000</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Engine-compatibility"><a href="#Engine-compatibility" class="headerlink" title="Engine compatibility"></a>Engine compatibility</h2><ul>
+<li>v2 supports node 8.16+</li>
+<li>v1.2.8 supports node 6+</li>
+<li>v1.2.7 supports node 4+</li>
+</ul>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>The MIT License Copyright (C) 2010-2020 by Philipp Dunkel, Ben Noordhuis, Elan Shankar, Paul Miller — see LICENSE file.</p>
+<p>Visit our <a href="https://github.com/fsevents/fsevents" target="_blank" rel="noopener">GitHub page</a> and <a href="https://npmjs.org/package/fsevents" target="_blank" rel="noopener">NPM Page</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/18/node_modules/fsevents/README/" data-id="ckcruabhc0004eskzcf4ncbqd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-node_modules/fsevents/package" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/18/node_modules/fsevents/package/" class="article-date">
+  <time datetime="2020-07-18T15:14:17.348Z" itemprop="datePublished">2020-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/18/node_modules/fsevents/package/">node_modules/fsevents/package</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        {"name":"fsevents","version":"2.1.3","description":"Native Access to MacOS FSEvents","main":"fsevents.js","types":"fsevents.d.ts","os":["darwin"],"files":["fsevents.d.ts","fsevents.js","fsevents.node"],"engines":{"node":"^8.16.0 || ^10.6.0 || >=11.0.0"},"scripts":{"clean":"node-gyp clean && rm -f fsevents.node","build":"node-gyp clean && rm -f fsevents.node && node-gyp rebuild && node-gyp clean","test":"/bin/bash ./test.sh 2>/dev/null","prepublishOnly":"npm run build"},"repository":{"type":"git","url":"https://github.com/fsevents/fsevents.git"},"keywords":["fsevents","mac"],"contributors":[{"name":"Philipp Dunkel","email":"pip@pipobscure.com"},{"name":"Ben Noordhuis","email":"info@bnoordhuis.nl"},{"name":"Elan Shankar","email":"elan.shanker@gmail.com"},{"name":"Miroslav Bajtoš","email":"mbajtoss@gmail.com"},{"name":"Paul Miller","url":"https://paulmillr.com"}],"license":"MIT","bugs":{"url":"https://github.com/fsevents/fsevents/issues"},"homepage":"https://github.com/fsevents/fsevents","devDependencies":{"node-gyp":"^6.1.0"},"__npminstall_done":false,"_from":"fsevents@2.1.3","_resolved":"https://registry.npm.taobao.org/fsevents/download/fsevents-2.1.3.tgz"}
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/18/node_modules/fsevents/package/" data-id="ckcruabhe0005eskzcyyr8rr0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-node_modules/fsevents/fsevents" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/18/node_modules/fsevents/fsevents/" class="article-date">
+  <time datetime="2020-07-18T15:14:17.348Z" itemprop="datePublished">2020-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/18/node_modules/fsevents/fsevents/">node_modules/fsevents/fsevents</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        /*
+ ** © 2020 by Philipp Dunkel, Ben Noordhuis, Elan Shankar, Paul Miller
+ ** Licensed under MIT License.
+ */
+
+/* jshint node:true */
+'use strict';
+
+if (process.platform !== 'darwin') {
+  throw new Error(`Module 'fsevents' is not compatible with platform '${process.platform}'`);
+}
+
+const Native = require('./fsevents.node');
+const events = Native.constants;
+
+function watch(path, handler) {
+  if (typeof path !== 'string') {
+    throw new TypeError(`fsevents argument 1 must be a string and not a ${typeof path}`);
+  }
+  if (typeof handler !== 'function') {
+    throw new TypeError(`fsevents argument 2 must be a function and not a ${typeof handler}`);
+  }
+
+  let instance = Native.start(path, handler);
+  if (!instance) throw new Error(`could not watch: ${path}`);
+  return () => {
+    const result = instance
+      ? Promise.resolve(instance).then(Native.stop)
+      : Promise.resolve(undefined);
+    instance = undefined;
+    return result;
+  };
+}
+
+function getInfo(path, flags) {
+  return {
+    path,
+    flags,
+    event: getEventType(flags),
+    type: getFileType(flags),
+    changes: getFileChanges(flags)
+  };
+}
+
+function getFileType(flags) {
+  if (events.ItemIsFile & flags) return 'file';
+  if (events.ItemIsDir & flags) return 'directory';
+  if (events.ItemIsSymlink & flags) return 'symlink';
+}
+function anyIsTrue(obj) {
+  for (let key in obj) {
+    if (obj[key]) return true;
+  }
+  return false;
+}
+function getEventType(flags) {
+  if (events.ItemRemoved & flags) return 'deleted';
+  if (events.ItemRenamed & flags) return 'moved';
+  if (events.ItemCreated & flags) return 'created';
+  if (events.ItemModified & flags) return 'modified';
+  if (events.RootChanged & flags) return 'root-changed';
+  if (events.ItemCloned & flags) return 'cloned';
+  if (anyIsTrue(flags)) return 'modified';
+  return 'unknown';
+}
+function getFileChanges(flags) {
+  return {
+    inode: !!(events.ItemInodeMetaMod & flags),
+    finder: !!(events.ItemFinderInfoMod & flags),
+    access: !!(events.ItemChangeOwner & flags),
+    xattrs: !!(events.ItemXattrMod & flags)
+  };
+}
+
+exports.watch = watch;
+exports.getInfo = getInfo;
+exports.constants = events;
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/18/node_modules/fsevents/fsevents/" data-id="ckcruabhr0006eskz1m5q1zod" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-我的第一篇博客" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="article-date">
@@ -90,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-id="ckcrsb9fn0001j4kz9w8vf080" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-id="ckcruabfn0003eskz92dlha22" class="article-share-link">Share</a>
       
       
     </footer>
@@ -139,7 +425,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/18/hello-world/" data-id="ckcrsb9ff0000j4kz83hk12yu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/18/hello-world/" data-id="ckcruabf50000eskz1jjyc4p1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -180,11 +466,23 @@
       <ul>
         
           <li>
-            <a href="/2020/07/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
+            <a href="/2020/07/18/package-lock/">package-lock</a>
           </li>
         
           <li>
-            <a href="/2020/07/18/hello-world/">Hello World</a>
+            <a href="/2020/07/18/package/">package</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/18/node_modules/fsevents/README/">node_modules/fsevents/README</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/18/node_modules/fsevents/package/">node_modules/fsevents/package</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/18/node_modules/fsevents/fsevents/">node_modules/fsevents/fsevents</a>
           </li>
         
       </ul>
